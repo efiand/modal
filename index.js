@@ -6,8 +6,14 @@ const DEFAULT_CONFIG = {
 	escSupport: true,
 	outClickSupport: true
 };
-const ACTIVE_SELECTORS = ['[tabindex]:not([tabindex="-1"])', 'a', 'button', 'input', 'select', 'textarea'];
-
+const ACTIVE_SELECTORS = [
+	'[tabindex]:not([tabindex="-1"])',
+	'a[href]',
+	'button:not(:disabled)',
+	'input:not(:disabled)',
+	'select:not(:disabled)',
+	'textarea:not(:disabled)'
+];
 export default class Modal {
 	constructor(options) {
 		this._options = Object.assign({}, DEFAULT_CONFIG, options);
